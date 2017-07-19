@@ -109,6 +109,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate ,CBPeripheralDe
         for service in peripheral.services! {
             connectPeripheral.discoverCharacteristics(nil, for: service)
             print(service.uuid)
+            
         }
 
     }
