@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2104" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gD9-4m-xfQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="F0Z-kd-wJG">
+            <objects>
+                <viewController id="gD9-4m-xfQ" customClass="welcomeVC" customModule="testBluetooth01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mm-kp-zv1"/>
+                        <viewControllerLayoutGuide type="bottom" id="QP3-WZ-wYx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRg-r8-oA5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-Rq-1lV">
+                                <rect key="frame" x="164" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Next:" destination="gD9-4m-xfQ" eventType="touchUpInside" id="Hr8-6l-LTI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fbv-Rq-1lV" firstAttribute="centerX" secondItem="cRg-r8-oA5" secondAttribute="centerX" id="txC-a5-MEI"/>
+                            <constraint firstItem="Fbv-Rq-1lV" firstAttribute="centerY" secondItem="cRg-r8-oA5" secondAttribute="centerY" id="yH4-aI-nMx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdN-eE-TAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-710" y="121"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="VC" id="BYZ-38-t0r" customClass="ViewController" customModule="testBluetooth01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LuR-Yo-ZNb">
+                                <rect key="frame" x="16" y="86.5" width="343" height="580.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Z53-NF-d7e">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z53-NF-d7e" id="D33-2S-jAN">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dUX-qu-moD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TMv-m3-t5w"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y8F-Ta-3Sc">
+                                <rect key="frame" x="16" y="20" width="343" height="66.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXW-xi-th9">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="66.5"/>
+                                        <state key="normal" title="寫入"/>
+                                        <connections>
+                                            <action selector="writeBody:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dtc-EV-aI6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-bg-3Z6">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="66.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="substart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eja-oO-eTT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y8F-Ta-3Sc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="5pi-E2-SDF"/>
+                            <constraint firstItem="y8F-Ta-3Sc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CyH-DB-ZSX"/>
+                            <constraint firstItem="y8F-Ta-3Sc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rsz-gK-ltM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LuR-Yo-ZNb" secondAttribute="bottom" id="TtV-sm-Kbs"/>
+                            <constraint firstItem="LuR-Yo-ZNb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZYA-Qy-2Pa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LuR-Yo-ZNb" secondAttribute="trailing" id="qkZ-Bt-dFz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y8F-Ta-3Sc" secondAttribute="trailing" id="sMB-OI-ICO"/>
+                            <constraint firstItem="LuR-Yo-ZNb" firstAttribute="top" secondItem="y8F-Ta-3Sc" secondAttribute="bottom" id="wq6-GX-bXh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabelView" destination="LuR-Yo-ZNb" id="Age-aU-oxm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="121"/>
+        </scene>
+        <!--BodyVC-->
+        <scene sceneID="8lu-Z6-XhV">
+            <objects>
+                <viewController storyboardIdentifier="bodyVC" id="bwb-vc-JWe" customClass="bodyVC" customModule="testBluetooth01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w51-Ib-g1t"/>
+                        <viewControllerLayoutGuide type="bottom" id="vML-5Q-QyM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YrH-e5-AZy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdX-XZ-QDI">
+                                <rect key="frame" x="164" y="282" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="writeBody:" destination="bwb-vc-JWe" eventType="touchUpInside" id="5hY-qP-VBd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQm-Hs-cOg">
+                                <rect key="frame" x="51" y="87" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="寫入"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbZ-Cr-TO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="121"/>
+        </scene>
+    </scenes>
+</document>
